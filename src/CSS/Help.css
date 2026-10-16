@@ -1,9 +1,20 @@
+/* ==========
+   Help Page == */
 
 .help-page {
   width: 100%;
   max-width: 1440px;
+  min-width: 0;
   margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
   color: #171717;
+}
+
+.help-page *,
+.help-page *::before,
+.help-page *::after {
+  box-sizing: border-box;
 }
 
 .help-page-heading {
@@ -15,18 +26,26 @@
   font-size: 25px;
   font-weight: 700;
   letter-spacing: -0.6px;
+  overflow-wrap: anywhere;
 }
 
 .help-page-heading p {
   margin: 8px 0 0;
   color: #737373;
   font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
 }
+
+/* ================================
+   Hero Section
+================================ */
 
 .help-hero {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 0;
   margin-bottom: 24px;
   padding: 30px 20px;
   border: 1px solid #e5e5e5;
@@ -39,6 +58,7 @@
   display: flex;
   width: 48px;
   height: 48px;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
   margin-bottom: 14px;
@@ -49,20 +69,31 @@
 }
 
 .help-hero h2 {
+  max-width: 100%;
   margin: 0;
   font-size: 21px;
   font-weight: 700;
+  overflow-wrap: anywhere;
 }
 
 .help-hero > p {
+  max-width: 100%;
   margin: 9px 0 19px;
   color: #737373;
   font-size: 12px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
 }
+
+/* ================================
+   Search
+================================ */
 
 .help-search {
   display: flex;
-  width: min(100%, 480px);
+  width: 100%;
+  max-width: 480px;
+  min-width: 0;
   height: 43px;
   align-items: center;
   gap: 10px;
@@ -73,15 +104,22 @@
   color: #737373;
 }
 
+.help-search > svg {
+  flex-shrink: 0;
+}
+
 .help-search:focus-within {
   border-color: #737373;
   box-shadow: 0 0 0 3px rgb(23 23 23 / 5%);
 }
 
 .help-search input {
+  display: block;
+  flex: 1;
   width: 100%;
   min-width: 0;
   height: 100%;
+  padding: 0;
   border: none;
   outline: none;
   background: transparent;
@@ -90,34 +128,55 @@
   font-size: 12px;
 }
 
+/* ================================
+   Main Content Grid
+================================ */
+
 .help-content-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(290px, 1fr);
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
   align-items: start;
   gap: 22px;
+  width: 100%;
+  min-width: 0;
 }
 
 .help-faq-card,
 .help-contact-card,
 .help-request-card {
+  width: 100%;
   min-width: 0;
+  max-width: 100%;
   padding: 22px;
   border: 1px solid #e5e5e5;
   border-radius: 10px;
   background: #fff;
 }
 
+.help-content-grid > *,
+.help-contact-column > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
 .help-contact-column {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 100%;
   min-width: 0;
+  max-width: 100%;
 }
+
+/* ================================
+   Section Headings
+================================ */
 
 .help-section-heading {
   display: flex;
   align-items: center;
   gap: 12px;
+  min-width: 0;
   margin-bottom: 21px;
 }
 
@@ -133,29 +192,44 @@
   color: #404040;
 }
 
+.help-section-heading > div {
+  min-width: 0;
+}
+
 .help-section-heading h2 {
   margin: 0;
   font-size: 15px;
   font-weight: 700;
+  overflow-wrap: anywhere;
 }
 
 .help-section-heading p {
   margin: 5px 0 0;
   color: #737373;
   font-size: 12px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
 }
 
+/* ================================
+   FAQ Section
+================================ */
+
 .help-faq-list {
+  width: 100%;
+  min-width: 0;
   border-top: 1px solid #eeeeee;
 }
 
 .help-faq-item {
+  min-width: 0;
   border-bottom: 1px solid #eeeeee;
 }
 
 .help-faq-question {
   display: flex;
   width: 100%;
+  min-width: 0;
   align-items: center;
   justify-content: space-between;
   gap: 15px;
@@ -166,8 +240,14 @@
   font-family: inherit;
   font-size: 12px;
   font-weight: 600;
+  line-height: 1.7;
   text-align: left;
   cursor: pointer;
+}
+
+.help-faq-question > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .help-faq-question svg {
@@ -184,12 +264,16 @@
   color: #737373;
   font-size: 12px;
   line-height: 1.8;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .help-no-results {
+  min-width: 0;
   padding: 35px 12px;
   color: #737373;
   text-align: center;
+  overflow-wrap: anywhere;
 }
 
 .help-no-results > svg {
@@ -204,9 +288,11 @@
 
 .help-no-results p {
   font-size: 12px;
+  line-height: 1.7;
 }
 
 .help-no-results button {
+  max-width: 100%;
   padding: 8px 12px;
   border: 1px solid #dedede;
   border-radius: 6px;
@@ -217,17 +303,23 @@
   cursor: pointer;
 }
 
+/* ================================
+   Contact Section
+================================ */
+
 .help-contact-description {
   margin: -5px 0 19px;
   color: #737373;
   font-size: 12px;
   line-height: 1.8;
+  overflow-wrap: anywhere;
 }
 
 .help-contact-option {
   display: flex;
   align-items: center;
   gap: 12px;
+  min-width: 0;
   padding: 14px 0;
   border-top: 1px solid #eeeeee;
 }
@@ -246,6 +338,7 @@
 
 .help-contact-option > div:last-child {
   display: flex;
+  flex: 1;
   flex-direction: column;
   gap: 5px;
   min-width: 0;
@@ -254,37 +347,52 @@
 .help-contact-option strong {
   color: #262626;
   font-size: 12px;
+  overflow-wrap: anywhere;
 }
 
 .help-contact-option span {
   color: #737373;
   font-size: 11px;
+  line-height: 1.6;
   overflow-wrap: anywhere;
+  word-break: break-word;
 }
+
+/* ================================
+   Support Request Form
+================================ */
 
 .help-request-form {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  width: 100%;
+  min-width: 0;
 }
 
 .help-field {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  width: 100%;
+  min-width: 0;
 }
 
 .help-field label {
   color: #404040;
   font-size: 12px;
   font-weight: 600;
+  overflow-wrap: anywhere;
 }
 
 .help-field input,
 .help-field select,
 .help-field textarea {
+  display: block;
   width: 100%;
   min-width: 0;
+  max-width: 100%;
+  margin: 0;
   padding: 11px 12px;
   border: 1px solid #dedede;
   border-radius: 7px;
@@ -313,20 +421,37 @@
   box-shadow: 0 0 0 3px rgb(23 23 23 / 5%);
 }
 
+.help-field input::placeholder,
+.help-field textarea::placeholder {
+  color: #a3a3a3;
+  opacity: 1;
+}
+
+.help-field select {
+  cursor: pointer;
+}
+
 .help-feedback {
   margin: 0;
   color: #9a3412;
   font-size: 11px;
   line-height: 1.7;
+  overflow-wrap: anywhere;
 }
+
+/* ================================
+   Submit Button
+================================ */
 
 .help-submit-button {
   display: flex;
   width: 100%;
+  min-width: 0;
   min-height: 41px;
   align-items: center;
   justify-content: center;
   gap: 8px;
+  padding: 10px 14px;
   border: 1px solid #171717;
   border-radius: 7px;
   background: #171717;
@@ -341,15 +466,38 @@
   background: #333;
 }
 
+/* ================================
+   Tablet
+================================ */
+
 @media (max-width: 950px) {
   .help-content-grid {
     grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .help-contact-column {
+    gap: 18px;
   }
 }
 
+/* ================================
+   Mobile
+================================ */
+
 @media (max-width: 600px) {
   .help-page {
+    width: 100%;
+    max-width: 100%;
     padding: 20px 15px 30px;
+  }
+
+  .help-page-heading {
+    margin-bottom: 18px;
+  }
+
+  .help-page-heading h1 {
+    font-size: 22px;
   }
 
   .help-hero {
@@ -360,9 +508,77 @@
     font-size: 19px;
   }
 
+  .help-hero > p {
+    max-width: 100%;
+  }
+
   .help-faq-card,
   .help-contact-card,
   .help-request-card {
+    width: 100%;
+    min-width: 0;
     padding: 17px;
+  }
+
+  .help-content-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .help-contact-column {
+    gap: 16px;
+  }
+
+  .help-section-heading {
+    gap: 9px;
+  }
+
+  .help-heading-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .help-faq-question {
+    gap: 10px;
+    padding: 15px 0;
+  }
+
+  .help-contact-option {
+    gap: 10px;
+  }
+}
+
+/* ================================
+   Small Mobile
+================================ */
+
+@media (max-width: 360px) {
+  .help-page {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .help-hero {
+    padding: 20px 12px;
+  }
+
+  .help-faq-card,
+  .help-contact-card,
+  .help-request-card {
+    padding: 13px;
+  }
+
+  .help-section-heading {
+    gap: 8px;
+  }
+
+  .help-faq-question {
+    font-size: 11px;
+  }
+
+  .help-search {
+    gap: 8px;
+    padding-right: 10px;
+    padding-left: 10px;
   }
 }

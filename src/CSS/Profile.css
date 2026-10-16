@@ -1,9 +1,22 @@
 
+/* ================================
+   Profile Page
+================================ */
+
 .profile-page {
   width: 100%;
   max-width: 1440px;
+  min-width: 0;
   margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
   color: #171717;
+}
+
+.profile-page *,
+.profile-page *::before,
+.profile-page *::after {
+  box-sizing: border-box;
 }
 
 .profile-page-heading {
@@ -15,18 +28,26 @@
   font-size: 25px;
   font-weight: 700;
   letter-spacing: -0.6px;
+  overflow-wrap: anywhere;
 }
 
 .profile-page-heading p {
   margin: 8px 0 0;
   color: #737373;
   font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
 }
+
+/* ================================
+   Profile Overview
+================================ */
 
 .profile-overview-card {
   display: flex;
   align-items: center;
   gap: 19px;
+  min-width: 0;
   margin-bottom: 22px;
   padding: 23px;
   border: 1px solid #e5e5e5;
@@ -55,6 +76,7 @@
 }
 
 .profile-avatar img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -80,6 +102,7 @@
   position: absolute;
   width: 1px;
   height: 1px;
+  padding: 0;
   overflow: hidden;
   opacity: 0;
 }
@@ -87,23 +110,27 @@
 .profile-overview-details {
   flex: 1;
   min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .profile-overview-details h2 {
   margin: 0;
   font-size: 19px;
   font-weight: 700;
+  overflow-wrap: anywhere;
 }
 
 .profile-overview-details > p {
   margin: 6px 0 10px;
   color: #737373;
   font-size: 12px;
+  overflow-wrap: anywhere;
 }
 
 .profile-member-badge {
   display: inline-flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 5px;
   color: #525252;
   font-size: 11px;
@@ -113,6 +140,8 @@
   display: inline-flex;
   align-items: center;
   gap: 7px;
+  flex-shrink: 0;
+  max-width: 100%;
   padding: 7px 10px;
   border: 1px solid #bbf7d0;
   border-radius: 6px;
@@ -126,21 +155,30 @@
 .profile-status-dot {
   width: 7px;
   height: 7px;
+  flex-shrink: 0;
   border-radius: 50%;
   background: #22c55e;
 }
 
+/* ================================
+   Main Content Grid
+================================ */
+
 .profile-content-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.8fr) minmax(250px, 1fr);
+  grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr);
   align-items: start;
   gap: 22px;
+  width: 100%;
+  min-width: 0;
 }
 
 .profile-form-card,
 .profile-side-card,
 .profile-help-card {
+  width: 100%;
   min-width: 0;
+  max-width: 100%;
   padding: 22px;
   border: 1px solid #e5e5e5;
   border-radius: 10px;
@@ -151,6 +189,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  min-width: 0;
   margin-bottom: 24px;
 }
 
@@ -166,28 +205,47 @@
   color: #404040;
 }
 
+.profile-card-heading > div {
+  min-width: 0;
+}
+
 .profile-card-heading h2 {
   margin: 0;
   font-size: 15px;
   font-weight: 700;
+  overflow-wrap: anywhere;
 }
 
 .profile-card-heading p {
   margin: 5px 0 0;
   color: #737373;
   font-size: 12px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
 }
+
+/* ================================
+   Profile Form
+================================ */
 
 .profile-form-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 21px 18px;
+  width: 100%;
+  min-width: 0;
+}
+
+.profile-form-grid > * {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .profile-field {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  width: 100%;
   min-width: 0;
 }
 
@@ -199,12 +257,16 @@
   color: #404040;
   font-size: 12px;
   font-weight: 600;
+  overflow-wrap: anywhere;
 }
 
 .profile-field input,
 .profile-field textarea {
+  display: block;
   width: 100%;
   min-width: 0;
+  max-width: 100%;
+  margin: 0;
   padding: 11px 12px;
   border: 1px solid #dedede;
   border-radius: 7px;
@@ -232,14 +294,25 @@
   box-shadow: 0 0 0 3px rgb(23 23 23 / 5%);
 }
 
+.profile-field input::placeholder,
+.profile-field textarea::placeholder {
+  color: #a3a3a3;
+  opacity: 1;
+}
+
+/* Input With Icon */
+
 .profile-input-with-icon {
   position: relative;
+  width: 100%;
+  min-width: 0;
 }
 
 .profile-input-with-icon > svg {
   position: absolute;
   top: 50%;
   left: 12px;
+  max-width: 16px;
   color: #737373;
   pointer-events: none;
   transform: translateY(-50%);
@@ -251,20 +324,30 @@
 
 .profile-character-count {
   align-self: flex-end;
+  max-width: 100%;
   color: #737373;
   font-size: 10px;
+  overflow-wrap: anywhere;
 }
 
 .profile-feedback {
   margin: 18px 0 0;
   color: #166534;
   font-size: 12px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
 }
+
+/* ================================
+   Form Actions
+================================ */
 
 .profile-form-actions {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
   gap: 10px;
+  min-width: 0;
   margin-top: 25px;
   padding-top: 20px;
   border-top: 1px solid #eeeeee;
@@ -273,6 +356,7 @@
 .profile-reset-button,
 .profile-save-button {
   display: inline-flex;
+  min-width: 0;
   min-height: 39px;
   align-items: center;
   justify-content: center;
@@ -305,11 +389,22 @@
   background: #333;
 }
 
+/* ================================
+   Right Sidebar
+================================ */
+
 .profile-side-column {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 100%;
   min-width: 0;
+  max-width: 100%;
+}
+
+.profile-side-column > * {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .profile-side-card .profile-card-heading {
@@ -320,21 +415,29 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  min-width: 0;
   padding: 15px 0;
   border-top: 1px solid #eeeeee;
 }
 
 .profile-account-row > span {
+  min-width: 0;
   color: #737373;
   font-size: 12px;
+  overflow-wrap: anywhere;
 }
 
 .profile-account-row > strong {
+  min-width: 0;
+  max-width: 100%;
   color: #262626;
   font-size: 12px;
   font-weight: 600;
   text-align: right;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .profile-account-row .profile-active-text {
@@ -343,7 +446,6 @@
 
 .profile-completion-track {
   height: 6px;
-  overflow: hidden;
   margin-top: 3px;
   border-radius: 10px;
   background: #e5e5e5;
@@ -356,6 +458,10 @@
   border-radius: inherit;
   background: #171717;
 }
+
+/* ================================
+   Help Card
+================================ */
 
 .profile-help-card {
   background: #fafafa;
@@ -378,6 +484,7 @@
   margin: 0;
   font-size: 14px;
   font-weight: 700;
+  overflow-wrap: anywhere;
 }
 
 .profile-help-card p {
@@ -385,17 +492,24 @@
   color: #737373;
   font-size: 12px;
   line-height: 1.7;
+  overflow-wrap: anywhere;
 }
 
 .profile-help-card a {
   display: inline-flex;
   align-items: center;
+  max-width: 100%;
   color: #171717;
   font-size: 12px;
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 3px;
+  overflow-wrap: anywhere;
 }
+
+/* ================================
+   Tablet
+================================ */
 
 @media (max-width: 1000px) {
   .profile-content-grid {
@@ -409,41 +523,142 @@
   }
 }
 
+/* ================================
+   Mobile
+================================ */
+
 @media (max-width: 600px) {
   .profile-page {
+    width: 100%;
+    max-width: 100%;
     padding: 20px 15px 30px;
+  }
+
+  .profile-page-heading {
+    margin-bottom: 18px;
+  }
+
+  .profile-page-heading h1 {
+    font-size: 22px;
   }
 
   .profile-overview-card {
     flex-wrap: wrap;
+    gap: 14px;
     padding: 17px;
   }
 
+  .profile-avatar {
+    width: 65px;
+    height: 65px;
+    font-size: 20px;
+  }
+
+  .profile-overview-details {
+    flex: 1 1 0;
+  }
+
+  .profile-overview-details h2 {
+    font-size: 17px;
+  }
+
   .profile-account-status {
-    margin-left: 94px;
+    margin-left: 79px;
+  }
+
+  .profile-content-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
   }
 
   .profile-form-card,
   .profile-side-card,
   .profile-help-card {
+    width: 100%;
+    min-width: 0;
     padding: 17px;
   }
 
-  .profile-form-grid,
-  .profile-side-column {
+  .profile-form-grid {
     grid-template-columns: minmax(0, 1fr);
+    gap: 17px;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .profile-form-grid > * {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
   }
 
   .profile-field-full {
     grid-column: auto;
   }
 
+  .profile-field input,
+  .profile-field textarea {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .profile-side-column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    min-width: 0;
+  }
+
   .profile-form-actions {
     flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 10px;
   }
 
   .profile-reset-button,
   .profile-save-button {
     width: 100%;
+    min-height: 42px;
+  }
+
+  .profile-account-row {
+    flex-wrap: wrap;
+  }
+}
+
+/* ================================
+   Small Mobile
+================================ */
+
+@media (max-width: 360px) {
+  .profile-page {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .profile-overview-card,
+  .profile-form-card,
+  .profile-side-card,
+  .profile-help-card {
+    padding: 13px;
+  }
+
+  .profile-overview-card {
+    gap: 12px;
+  }
+
+  .profile-account-status {
+    margin-left: 77px;
+    white-space: normal;
+  }
+
+  .profile-card-heading {
+    gap: 9px;
+  }
+
+  .profile-heading-icon {
+    width: 34px;
+    height: 34px;
   }
 }
