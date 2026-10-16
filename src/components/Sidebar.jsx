@@ -40,8 +40,6 @@ export default function Sidebar({ isOpen, onClose }) {
           </button>
         </div>
 
-        <div className="sidebar-section-label">WORKSPACE</div>
-
         <nav className="sidebar-nav">
           {navItems.map(({ label, path, icon: Icon }) => (
             <NavLink
@@ -58,14 +56,6 @@ export default function Sidebar({ isOpen, onClose }) {
             </NavLink>
           ))}
         </nav>
-
-        <div className="sidebar-bottom">
-          <div className="sidebar-user-avatar">U</div>
-          <div className="sidebar-user-info">
-            <strong>Demo User</strong>
-            <span>Customer Account</span>
-          </div>
-        </div>
       </aside>
 
       {isOpen && (

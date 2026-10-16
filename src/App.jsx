@@ -9,6 +9,7 @@ import MyReferrals from "./pages/MyReferrals";
 import ReferralDetails from "./pages/ReferralDetail";
 import Rewards from "./pages/Rewards";
 import Profile from "./pages/Profile";
+import Help from "./pages/Help";
 
 export default function App() {
   return (
@@ -29,6 +30,7 @@ export default function App() {
 
           <Route path="/rewards" element={<Rewards />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/help" element={<Help />} />
 
         </Route>
 
