@@ -1,0 +1,190 @@
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  width: 100%;
+  height: 68px;
+  padding: 0 30px;
+
+  background: #ffffff;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.header-left,
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-left {
+  gap: 14px;
+  min-width: 0;
+}
+
+.header-page-title {
+  color: #171717;
+  font-size: 17px;
+  font-weight: 650;
+  letter-spacing: -0.3px;
+}
+
+.header-menu-button {
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #222222;
+  cursor: pointer;
+}
+
+.header-right {
+  gap: 20px;
+}
+
+.header-search {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  width: 235px;
+  height: 37px;
+  padding: 0 11px;
+
+  border: 1px solid #e3e3e3;
+  border-radius: 7px;
+  color: #777777;
+  background: #ffffff;
+}
+
+.header-search input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #222222;
+  font-size: 12px;
+}
+
+.header-search input::placeholder {
+  color: #999999;
+}
+
+.header-icon-button {
+  position: relative;
+  display: grid;
+  place-items: center;
+
+  width: 36px;
+  height: 36px;
+
+  border: 0;
+  background: transparent;
+  color: #555555;
+  cursor: pointer;
+}
+
+.notification-dot {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+
+  width: 7px;
+  height: 7px;
+
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  background: #171717;
+}
+
+.header-profile {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #333333;
+  cursor: pointer;
+}
+
+.header-avatar {
+  display: grid;
+  place-items: center;
+
+  width: 34px;
+  height: 34px;
+
+  border-radius: 50%;
+  background: #ededed;
+  color: #333333;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.header-profile-name {
+  font-size: 12px;
+  font-weight: 550;
+}
+
+@media (max-width: 1023px) {
+  .header-menu-button {
+    display: flex;
+  }
+
+  .app-header {
+    height: 62px;
+    padding: 0 20px;
+  }
+
+  .header-right {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .app-header {
+    gap: 10px;
+    padding: 0 12px;
+  }
+
+  .header-page-title {
+    font-size: 15px;
+  }
+
+  .header-search {
+    width: 36px;
+    padding: 0 9px;
+    border-color: transparent;
+  }
+
+  .header-search input {
+    width: 0;
+    padding: 0;
+    opacity: 0;
+  }
+
+  .header-profile-name,
+  .header-profile > svg {
+    display: none;
+  }
+
+  .header-right {
+    gap: 5px;
+  }
+}

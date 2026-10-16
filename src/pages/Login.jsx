@@ -1,12 +1,6 @@
-
 import { useState } from "react";
-import {
-  Mail,
-  Eye,
-  EyeOff,
-  Landmark,
-} from "lucide-react";
-
+import { Mail, Eye, EyeOff, Landmark } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import "../CSS/Login.css";
 import login_leftImage from "../assets/images/login_leftimage.png";
 
@@ -15,6 +9,8 @@ export default function Login() {
   const [rememberMe, setRememberMe] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -35,11 +31,17 @@ export default function Login() {
     window.alert("Single sign-on will be connected later.");
   }
 
+  function handlingSubmit(event) {
+    event.preventDefault();
+ 
+    // Temporary frontend navigation; no backend authentication.
+    navigate("/dashboard");
+  }
+
   return (
     <main className="login-page">
       {/* CENTERED WHITE LOGIN CARD */}
       <div className="login-card">
-
         {/* LEFT SIDE: IMAGE ONLY */}
         <section className="login-hero">
           <img
@@ -52,7 +54,6 @@ export default function Login() {
         {/* RIGHT SIDE: LOGIN FORM */}
         <section className="login-panel">
           <div className="login-form-content">
-
             <header className="login-card-header">
               <h2>Welcome Back</h2>
               <p>Sign in to your account</p>
@@ -61,9 +62,7 @@ export default function Login() {
             <form onSubmit={handleSubmit}>
               {/* EMAIL */}
               <div className="form-group">
-                <label htmlFor="email">
-                  Email Address
-                </label>
+                <label htmlFor="email">Email Address</label>
 
                 <div className="input-wrapper">
                   <Mail size={16} aria-hidden="true" />
@@ -74,9 +73,7 @@ export default function Login() {
                     type="email"
                     placeholder="you@example.com"
                     value={email}
-                    onChange={(event) =>
-                      setEmail(event.target.value)
-                    }
+                    onChange={(event) => setEmail(event.target.value)}
                     autoComplete="username"
                     required
                   />
@@ -85,9 +82,7 @@ export default function Login() {
 
               {/* PASSWORD */}
               <div className="form-group">
-                <label htmlFor="password">
-                  Password
-                </label>
+                <label htmlFor="password">Password</label>
 
                 <div className="input-wrapper">
                   <input
@@ -96,9 +91,7 @@ export default function Login() {
                     type={showPassword ? "text" : "password"}
                     placeholder="Enter your password"
                     value={password}
-                    onChange={(event) =>
-                      setPassword(event.target.value)
-                    }
+                    onChange={(event) => setPassword(event.target.value)}
                     autoComplete="current-password"
                     required
                   />
@@ -106,20 +99,12 @@ export default function Login() {
                   <button
                     className="password-toggle"
                     type="button"
-                    onClick={() =>
-                      setShowPassword((previous) => !previous)
-                    }
+                    onClick={() => setShowPassword((previous) => !previous)}
                     aria-label={
-                      showPassword
-                        ? "Hide password"
-                        : "Show password"
+                      showPassword ? "Hide password" : "Show password"
                     }
                   >
-                    {showPassword ? (
-                      <EyeOff size={17} />
-                    ) : (
-                      <Eye size={17} />
-                    )}
+                    {showPassword ? <EyeOff size={17} /> : <Eye size={17} />}
                   </button>
                 </div>
               </div>
@@ -130,9 +115,7 @@ export default function Login() {
                   <input
                     type="checkbox"
                     checked={rememberMe}
-                    onChange={(event) =>
-                      setRememberMe(event.target.checked)
-                    }
+                    onChange={(event) => setRememberMe(event.target.checked)}
                   />
 
                   <span>Remember me</span>
@@ -150,6 +133,7 @@ export default function Login() {
               {/* SIGN IN */}
               <button
                 className="sign-in-button"
+                onClick={handlingSubmit}
                 type="submit"
               >
                 Sign In
@@ -163,11 +147,7 @@ export default function Login() {
               </div>
 
               {/* SINGLE SIGN-ON */}
-              <button
-                className="sso-button"
-                type="button"
-                onClick={handleSSO}
-              >
+              <button className="sso-button" type="button" onClick={handleSSO}>
                 <Landmark size={17} />
                 <span>Continue with SSO</span>
               </button>
@@ -175,13 +155,10 @@ export default function Login() {
 
             {/* FOOTER */}
             <p className="admin-note">
-              Don't have an account?{" "}
-              <strong>Contact your admin</strong>
+              Don't have an account? <strong>Contact your admin</strong>
             </p>
-
           </div>
         </section>
-
       </div>
     </main>
   );

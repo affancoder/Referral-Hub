@@ -1,0 +1,77 @@
+import { NavLink } from "react-router-dom";
+import {
+  LayoutDashboard,
+  FilePlus2,
+  Files,
+  Gift,
+  X,
+  Handshake,
+} from "lucide-react";
+import "../CSS/Sidebar.css";
+
+const navItems = [
+  { label: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
+  { label: "Submit Referral", path: "/submit-referral", icon: FilePlus2 },
+  { label: "My Referrals", path: "/my-referrals", icon: Files },
+  { label: "Rewards", path: "/rewards", icon: Gift },
+];
+
+export default function Sidebar({ isOpen, onClose }) {
+  return (
+    <>
+      <aside className={`app-sidebar ${isOpen ? "sidebar-open" : ""}`}>
+        <div className="sidebar-brand">
+          <div className="sidebar-logo">
+            <Handshake size={22} />
+          </div>
+          <span>Referral Hub</span>
+
+          <button
+            type="button"
+            className="sidebar-close"
+            aria-label="Close navigation"
+            onClick={onClose}
+          >
+            <X size={21} />
+          </button>
+        </div>
+
+        <div className="sidebar-section-label">WORKSPACE</div>
+
+        <nav className="sidebar-nav">
+          {navItems.map(({ label, path, icon: Icon }) => (
+            <NavLink
+              key={path}
+              to={path}
+              end
+              className={({ isActive }) =>
+                `sidebar-link ${isActive ? "active" : ""}`
+              }
+              onClick={onClose}
+            >
+              <Icon size={19} strokeWidth={1.8} />
+              <span>{label}</span>
+            </NavLink>
+          ))}
+        </nav>
+
+        <div className="sidebar-bottom">
+          <div className="sidebar-user-avatar">U</div>
+          <div className="sidebar-user-info">
+            <strong>Demo User</strong>
+            <span>Customer Account</span>
+          </div>
+        </div>
+      </aside>
+
+      {isOpen && (
+        <button
+          type="button"
+          className="sidebar-backdrop"
+          aria-label="Close navigation"
+          onClick={onClose}
+        />
+      )}
+    </>
+  );
+}
