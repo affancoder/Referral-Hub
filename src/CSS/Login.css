@@ -563,6 +563,10 @@
     min-height: 0;
   }
 
+  .login-hero{
+    display: none;
+  }
+
   .login-page .login-hero {
     width: 100%;
     height: clamp(150px, 28vw, 220px);
