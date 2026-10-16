@@ -1,0 +1,368 @@
+
+.my-referrals-page {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  color: #171717;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+.my-referrals-page * {
+  box-sizing: border-box;
+}
+
+.my-referrals-heading {
+  margin-bottom: 17px;
+}
+
+.my-referrals-heading h1 {
+  margin: 0 0 4px;
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: -0.6px;
+}
+
+.my-referrals-heading p {
+  margin: 0;
+  color: #666;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* Status tabs */
+
+.referrals-tabs {
+  display: flex;
+  align-items: stretch;
+  gap: 5px;
+  width: 100%;
+  margin-bottom: 12px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.referrals-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-height: 34px;
+  padding: 0 14px;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  background: #fff;
+  color: #444;
+  font-family: inherit;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.referrals-tab:hover {
+  background: #f4f4f4;
+}
+
+.referrals-tab.active {
+  border-color: #050505;
+  background: #050505;
+  color: #fff;
+}
+
+/* Search and filters */
+
+.my-referrals-toolbar {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) 155px 125px;
+  gap: 9px;
+  margin-bottom: 12px;
+}
+
+.my-referrals-search,
+.referrals-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  height: 36px;
+  padding: 0 10px;
+  border: 1px solid #dedede;
+  border-radius: 5px;
+  background: #fff;
+  color: #777;
+}
+
+.my-referrals-search input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #222;
+  font-family: inherit;
+  font-size: 11px;
+}
+
+.my-referrals-search input::placeholder {
+  color: #888;
+}
+
+.referrals-filter {
+  position: relative;
+}
+
+.referrals-filter select {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  appearance: none;
+  padding-right: 15px;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #333;
+  font-family: inherit;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.referrals-filter svg {
+  position: absolute;
+  right: 9px;
+  pointer-events: none;
+}
+
+/* Referrals table */
+
+.my-referrals-table-panel {
+  overflow: hidden;
+  border: 1px solid #e4e4e4;
+  border-radius: 7px;
+  background: #fff;
+}
+
+.my-referrals-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.my-referrals-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.my-referrals-table thead {
+  background: #f6f6f6;
+}
+
+.my-referrals-table th {
+  height: 33px;
+  padding: 8px 9px;
+  border-bottom: 1px solid #e5e5e5;
+  color: #292929;
+  font-size: 9px;
+  font-weight: 650;
+}
+
+.my-referrals-table td {
+  height: 43px;
+  padding: 6px 9px;
+  border-bottom: 1px solid #ededed;
+  color: #363636;
+  vertical-align: middle;
+}
+
+.my-referrals-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.my-referrals-table th:first-child,
+.my-referrals-table td:first-child {
+  width: 30px;
+  text-align: center;
+}
+
+.my-referral-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.my-referral-contact strong {
+  color: #202020;
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.my-referral-contact span {
+  color: #666;
+  font-size: 9px;
+}
+
+.my-referral-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 19px;
+  padding: 3px 9px;
+  border-radius: 20px;
+  background: #e9e9e9;
+  color: #222;
+  font-size: 9px;
+  font-weight: 650;
+}
+
+.my-referral-status.contacted,
+.my-referral-status.sale-completed {
+  background: #050505;
+  color: #fff;
+}
+
+.my-referral-status.in-progress {
+  background: #e6e6e6;
+  color: #222;
+}
+
+.my-referral-status.lost {
+  background: #f1e5e5;
+  color: #6e2828;
+}
+
+.my-referral-earned {
+  font-weight: 700;
+  color: #111 !important;
+}
+
+.my-referral-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.my-referral-actions button {
+  min-width: 42px;
+  min-height: 23px;
+  padding: 2px 9px;
+  border: 0;
+  border-radius: 4px;
+  background: #ededed;
+  color: #222;
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.my-referral-actions button:hover {
+  background: #dcdcdc;
+}
+
+.my-referral-actions .my-referral-more {
+  min-width: 22px;
+  padding: 0 4px;
+  background: transparent;
+  font-size: 17px;
+}
+
+.my-referral-actions .my-referral-more:hover {
+  background: #f0f0f0;
+}
+
+.my-referrals-empty {
+  height: 100px !important;
+  text-align: center;
+  color: #777 !important;
+}
+
+/* Pagination */
+
+.my-referrals-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 49px;
+  padding: 8px 12px;
+  border-top: 1px solid #e9e9e9;
+}
+
+.my-referrals-pagination > span {
+  color: #777;
+  font-size: 10px;
+}
+
+.my-referrals-page-buttons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.my-referrals-page-buttons button {
+  display: grid;
+  place-items: center;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 7px;
+  border: 1px solid #e2e2e2;
+  border-radius: 4px;
+  background: #fff;
+  color: #333;
+  font-family: inherit;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.my-referrals-page-buttons button.active {
+  border-color: #050505;
+  background: #050505;
+  color: #fff;
+}
+
+.my-referrals-page-buttons button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+@media (max-width: 850px) {
+  .my-referrals-toolbar {
+    grid-template-columns: minmax(0, 1fr) 140px;
+  }
+
+  .my-referrals-search {
+    grid-column: 1 / -1;
+  }
+
+  .my-referrals-table {
+    min-width: 850px;
+  }
+}
+
+@media (max-width: 520px) {
+  .my-referrals-heading h1 {
+    font-size: 21px;
+  }
+
+  .my-referrals-toolbar {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .my-referrals-search {
+    grid-column: auto;
+  }
+
+  .referrals-tabs {
+    padding-bottom: 4px;
+  }
+
+  .my-referrals-pagination {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .my-referrals-page-buttons {
+    align-self: flex-end;
+  }
+}

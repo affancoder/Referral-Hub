@@ -1,0 +1,292 @@
+
+.submit-referral-page {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  color: #111;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+.submit-referral-page * {
+  box-sizing: border-box;
+}
+
+.submit-referral-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.submit-referral-heading h1 {
+  margin: 0 0 5px;
+  color: #111;
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: -0.6px;
+}
+
+.submit-referral-heading p {
+  margin: 0;
+  color: #656565;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.submit-referral-page-status {
+  flex-shrink: 0;
+  padding: 6px 12px;
+  border-radius: 5px;
+  background: #ededed;
+  color: #333;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.submit-referral-form {
+  padding: 22px 20px 18px;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.submit-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 16px;
+  row-gap: 17px;
+}
+
+.submit-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+.submit-form-field label {
+  color: #222;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.submit-form-field label span {
+  color: #111;
+}
+
+.submit-form-field input,
+.submit-form-field select,
+.submit-form-field textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+  background: #fff;
+  color: #222;
+  font-family: inherit;
+  font-size: 12px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.submit-form-field input,
+.submit-form-field select {
+  height: 39px;
+  padding: 0 11px;
+}
+
+.submit-form-field input::placeholder,
+.submit-form-field textarea::placeholder {
+  color: #8b8b8b;
+  opacity: 1;
+}
+
+.submit-form-field input:focus,
+.submit-form-field select:focus,
+.submit-form-field textarea:focus {
+  border-color: #777;
+  box-shadow: 0 0 0 2px rgb(0 0 0 / 5%);
+}
+
+.submit-select-wrap {
+  position: relative;
+}
+
+.submit-select-wrap select {
+  appearance: none;
+  padding-right: 34px;
+  color: #777;
+  cursor: pointer;
+}
+
+.submit-select-wrap select:valid {
+  color: #222;
+}
+
+.submit-select-wrap svg {
+  position: absolute;
+  top: 50%;
+  right: 11px;
+  pointer-events: none;
+  color: #555;
+  transform: translateY(-50%);
+}
+
+.submit-form-field-full {
+  grid-column: 1 / -1;
+}
+
+.submit-form-field textarea {
+  min-height: 82px;
+  padding: 11px;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.submit-referral-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: 19px;
+  color: #333;
+  font-size: 11px;
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+.submit-referral-consent input {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
+  margin: 2px 0 0;
+  accent-color: #111;
+  cursor: pointer;
+}
+
+.submit-referral-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid #ededed;
+}
+
+.submit-referral-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 104px;
+  min-height: 39px;
+  padding: 0 17px;
+  border: 1px solid #cfcfcf;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.submit-referral-cancel {
+  background: #fff;
+  color: #222;
+}
+
+.submit-referral-cancel:hover {
+  background: #f4f4f4;
+}
+
+.submit-referral-actions .submit-referral-submit {
+  border-color: #050505;
+  background: #050505;
+  color: #fff;
+}
+
+.submit-referral-actions .submit-referral-submit:hover {
+  border-color: #333;
+  background: #333;
+}
+
+.referral-form-success {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding: 13px 15px;
+  border: 1px solid #d8d8d8;
+  border-radius: 6px;
+  background: #f8f8f8;
+  color: #222;
+}
+
+.referral-form-success > svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.referral-form-success strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+}
+
+.referral-form-success p {
+  margin: 0;
+  color: #666;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .submit-referral-heading {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .submit-referral-heading h1 {
+    font-size: 20px;
+  }
+
+  .submit-referral-page-status {
+    margin-top: 3px;
+    padding: 5px 8px;
+    font-size: 10px;
+  }
+
+  .submit-referral-form {
+    padding: 17px 14px;
+  }
+
+  .submit-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 15px;
+  }
+
+  .submit-form-field-full {
+    grid-column: auto;
+  }
+
+  .submit-referral-actions {
+    gap: 8px;
+  }
+
+  .submit-referral-actions button {
+    flex: 1;
+    min-width: 0;
+    padding: 0 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .submit-form-field input,
+  .submit-form-field select,
+  .submit-form-field textarea,
+  .submit-referral-actions button {
+    transition: none;
+  }
+}
