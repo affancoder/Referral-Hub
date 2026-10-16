@@ -5,8 +5,8 @@ import {
   Files,
   Gift,
   X,
-  Handshake,
 } from "lucide-react";
+import logo from "../assets/images/favicon.png";
 import "../CSS/Sidebar.css";
 
 const navItems = [
@@ -22,7 +22,7 @@ export default function Sidebar({ isOpen, onClose }) {
       <aside className={`app-sidebar ${isOpen ? "sidebar-open" : ""}`}>
         <div className="sidebar-brand">
           <div className="sidebar-logo">
-            <Handshake size={22} />
+             <img src={logo} alt="Referral Hub logo" />
           </div>
           <span>Referral Hub</span>
 
