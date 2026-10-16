@@ -127,7 +127,7 @@ export default function SubmitReferral() {
               type="email"
               value={form.email}
               onChange={handleChange}
-              placeholder="john.doe@company.com"
+              placeholder="erkibjn@company.com"
               autoComplete="email"
               required
             />
@@ -143,7 +143,7 @@ export default function SubmitReferral() {
               type="tel"
               value={form.phone}
               onChange={handleChange}
-              placeholder="+91 98765 43210"
+              placeholder="+91 0101010101"
               autoComplete="tel"
               required
             />
@@ -158,7 +158,7 @@ export default function SubmitReferral() {
               name="companyName"
               value={form.companyName}
               onChange={handleChange}
-              placeholder="Acme Corp"
+              placeholder="XYTE Corp"
               autoComplete="organization"
               required
             />
@@ -172,7 +172,7 @@ export default function SubmitReferral() {
               type="text"
               value={form.companyWebsite}
               onChange={handleChange}
-              placeholder="https://www.acmecorp.com"
+              placeholder="https://www.xyz.com"
             />
           </div>
 

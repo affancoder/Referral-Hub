@@ -1,22 +1,117 @@
-
 import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Search, ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import "../CSS/MyReferrals.css";
 
 const referrals = [
-  { id: 1, name: "Jordan Lee", email: "jordan@acmecorp.com", company: "Acme Corp", date: "Oct 10, 2026", status: "In Review", reward: "Pending" },
-  { id: 2, name: "Taylor Smith", email: "taylor@brighttech.com", company: "BrightTech Solutions", date: "Oct 06, 2026", status: "Contacted", reward: "Pending" },
-  { id: 3, name: "Casey Brown", email: "casey@globalind.com", company: "Global Industries", date: "Sep 28, 2026", status: "Sale Completed", reward: "$200" },
-  { id: 4, name: "Morgan Davis", email: "morgan@nextgen.com", company: "NextGen Co", date: "Sep 21, 2026", status: "In Progress", reward: "Pending" },
-  { id: 5, name: "Riley Wilson", email: "riley@techsphere.com", company: "TechSphere", date: "Sep 15, 2026", status: "Contacted", reward: "Pending" },
-  { id: 6, name: "Jamie Carter", email: "jamie@vraion.com", company: "Vraion Corp", date: "Aug 21, 2026", status: "Lost", reward: "—" },
-  { id: 7, name: "Alex Johnson", email: "alex@cloudnine.com", company: "CloudNine", date: "Aug 14, 2026", status: "In Progress", reward: "Pending" },
-  { id: 8, name: "Sam Wilson", email: "sam@brightpath.com", company: "BrightPath", date: "Aug 05, 2026", status: "Contacted", reward: "Pending" },
-  { id: 9, name: "Chris Martin", email: "chris@innovate.com", company: "Innovate Ltd", date: "Jul 24, 2026", status: "Sale Completed", reward: "$200" },
-  { id: 10, name: "Robin Taylor", email: "robin@pinnacle.com", company: "Pinnacle Group", date: "Jul 15, 2026", status: "In Review", reward: "Pending" },
-  { id: 11, name: "Jamie Morgan", email: "jamie@vertex.com", company: "Vertex Systems", date: "Jun 20, 2026", status: "Contacted", reward: "Pending" },
-  { id: 12, name: "Drew Parker", email: "drew@horizon.com", company: "Horizon Inc", date: "May 12, 2026", status: "Sale Completed", reward: "$200" },
+  {
+    id: 1,
+    name: "Jordan Lee",
+    email: "jordan@acmecorp.com",
+    company: "Acme Corp",
+    date: "Oct 10, 2026",
+    status: "In Review",
+    reward: "Pending",
+  },
+  {
+    id: 2,
+    name: "Taylor Smith",
+    email: "taylor@brighttech.com",
+    company: "BrightTech Solutions",
+    date: "Oct 06, 2026",
+    status: "Contacted",
+    reward: "Pending",
+  },
+  {
+    id: 3,
+    name: "Casey Brown",
+    email: "casey@globalind.com",
+    company: "Global Industries",
+    date: "Sep 28, 2026",
+    status: "Sale Completed",
+    reward: "$200",
+  },
+  {
+    id: 4,
+    name: "Morgan Davis",
+    email: "morgan@nextgen.com",
+    company: "NextGen Co",
+    date: "Sep 21, 2026",
+    status: "In Progress",
+    reward: "Pending",
+  },
+  {
+    id: 5,
+    name: "Riley Wilson",
+    email: "riley@techsphere.com",
+    company: "TechSphere",
+    date: "Sep 15, 2026",
+    status: "Contacted",
+    reward: "Pending",
+  },
+  {
+    id: 6,
+    name: "Jamie Carter",
+    email: "jamie@vraion.com",
+    company: "Vraion Corp",
+    date: "Aug 21, 2026",
+    status: "Lost",
+    reward: "—",
+  },
+  {
+    id: 7,
+    name: "Alex Johnson",
+    email: "alex@cloudnine.com",
+    company: "CloudNine",
+    date: "Aug 14, 2026",
+    status: "In Progress",
+    reward: "Pending",
+  },
+  {
+    id: 8,
+    name: "Sam Wilson",
+    email: "sam@brightpath.com",
+    company: "BrightPath",
+    date: "Aug 05, 2026",
+    status: "Contacted",
+    reward: "Pending",
+  },
+  {
+    id: 9,
+    name: "Chris Martin",
+    email: "chris@innovate.com",
+    company: "Innovate Ltd",
+    date: "Jul 24, 2026",
+    status: "Sale Completed",
+    reward: "$200",
+  },
+  {
+    id: 10,
+    name: "Robin Taylor",
+    email: "robin@pinnacle.com",
+    company: "Pinnacle Group",
+    date: "Jul 15, 2026",
+    status: "In Review",
+    reward: "Pending",
+  },
+  {
+    id: 11,
+    name: "Jamie Morgan",
+    email: "jamie@vertex.com",
+    company: "Vertex Systems",
+    date: "Jun 20, 2026",
+    status: "Contacted",
+    reward: "Pending",
+  },
+  {
+    id: 12,
+    name: "Drew Parker",
+    email: "drew@horizon.com",
+    company: "Horizon Inc",
+    date: "May 12, 2026",
+    status: "Sale Completed",
+    reward: "$200",
+  },
 ];
 
 const tabs = [
@@ -40,14 +135,17 @@ export default function MyReferrals() {
   const [timeFilter, setTimeFilter] = useState("All Time");
   const [page, setPage] = useState(1);
 
-  const counts = useMemo(() => ({
-    All: referrals.length,
-    "In Review": referrals.filter((r) => r.status === "In Review").length,
-    Contacted: referrals.filter((r) => r.status === "Contacted").length,
-    "In Progress": referrals.filter((r) => r.status === "In Progress").length,
-    Won: referrals.filter((r) => r.status === "Sale Completed").length,
-    Lost: referrals.filter((r) => r.status === "Lost").length,
-  }), []);
+  const counts = useMemo(
+    () => ({
+      All: referrals.length,
+      "In Review": referrals.filter((r) => r.status === "In Review").length,
+      Contacted: referrals.filter((r) => r.status === "Contacted").length,
+      "In Progress": referrals.filter((r) => r.status === "In Progress").length,
+      Won: referrals.filter((r) => r.status === "Sale Completed").length,
+      Lost: referrals.filter((r) => r.status === "Lost").length,
+    }),
+    [],
+  );
 
   const filteredReferrals = useMemo(() => {
     const query = search.trim().toLowerCase();
@@ -60,13 +158,13 @@ export default function MyReferrals() {
           : referral.status === activeTab);
 
       const matchesStatus =
-        statusFilter === "All Status" ||
-        referral.status === statusFilter;
+        statusFilter === "All Status" || referral.status === statusFilter;
 
       const matchesSearch =
         !query ||
-        [referral.name, referral.email, referral.company]
-          .some((value) => value.toLowerCase().includes(query));
+        [referral.name, referral.email, referral.company].some((value) =>
+          value.toLowerCase().includes(query),
+        );
 
       const month = new Date(`${referral.date} 00:00:00`).getMonth();
       const matchesTime =
@@ -79,11 +177,14 @@ export default function MyReferrals() {
   }, [activeTab, search, statusFilter, timeFilter]);
 
   const pageSize = 5;
-  const totalPages = Math.max(1, Math.ceil(filteredReferrals.length / pageSize));
+  const totalPages = Math.max(
+    1,
+    Math.ceil(filteredReferrals.length / pageSize),
+  );
   const safePage = Math.min(page, totalPages);
   const visibleReferrals = filteredReferrals.slice(
     (safePage - 1) * pageSize,
-    safePage * pageSize
+    safePage * pageSize,
   );
 
   function changeTab(status) {
@@ -98,7 +199,11 @@ export default function MyReferrals() {
         <p>View and track all your submitted referrals.</p>
       </div>
 
-      <div className="referrals-tabs" role="tablist" aria-label="Referral status">
+      <div
+        className="referrals-tabs"
+        role="tablist"
+        aria-label="Referral status"
+      >
         {tabs.map((tab) => (
           <button
             key={tab.status}
@@ -184,25 +289,45 @@ export default function MyReferrals() {
                   <td>{referral.id}</td>
                   <td>
                     <div className="my-referral-contact">
-                      <strong>{referral.name}</strong>
-                      <span>{referral.email}</span>
+                      <td>
+                        <button
+                          type="button"
+                          className="referral-name-link"
+                          onClick={() =>
+                            navigate(`/referral-details/${referral.id}`)
+                          }
+                        >
+                          {referral.name}
+                        </button>
+                      </td>
+                      {/* <span>{referral.email}</span> */}
                     </div>
                   </td>
                   <td>{referral.company}</td>
                   <td>{referral.date}</td>
                   <td>
-                    <span className={`my-referral-status ${getStatusClass(referral.status)}`}>
+                    <span
+                      className={`my-referral-status ${getStatusClass(referral.status)}`}
+                    >
                       {referral.status}
                     </span>
                   </td>
-                  <td className={referral.reward.startsWith("$") ? "my-referral-earned" : ""}>
+                  <td
+                    className={
+                      referral.reward.startsWith("$")
+                        ? "my-referral-earned"
+                        : ""
+                    }
+                  >
                     {referral.reward}
                   </td>
                   <td>
                     <div className="my-referral-actions">
                       <button
                         type="button"
-                        onClick={() => navigate(`/referral-details/${referral.id}`)}
+                        onClick={() =>
+                          navigate(`/referral-details/${referral.id}`)
+                        }
                       >
                         View
                       </button>
@@ -210,7 +335,9 @@ export default function MyReferrals() {
                         type="button"
                         className="my-referral-more"
                         aria-label={`View more details for ${referral.name}`}
-                        onClick={() => navigate(`/referral-details/${referral.id}`)}
+                        onClick={() =>
+                          navigate(`/referral-details/${referral.id}`)
+                        }
                       >
                         ⋮
                       </button>
@@ -232,7 +359,8 @@ export default function MyReferrals() {
 
         <div className="my-referrals-pagination">
           <span>
-            Showing {filteredReferrals.length === 0 ? 0 : (safePage - 1) * pageSize + 1}
+            Showing{" "}
+            {filteredReferrals.length === 0 ? 0 : (safePage - 1) * pageSize + 1}
             {"–"}
             {Math.min(safePage * pageSize, filteredReferrals.length)} of{" "}
             {filteredReferrals.length} referrals
@@ -248,24 +376,28 @@ export default function MyReferrals() {
               <ChevronLeft size={16} />
             </button>
 
-            {Array.from({ length: totalPages }, (_, index) => index + 1).map((number) => (
-              <button
-                type="button"
-                key={number}
-                className={safePage === number ? "active" : ""}
-                aria-label={`Page ${number}`}
-                aria-current={safePage === number ? "page" : undefined}
-                onClick={() => setPage(number)}
-              >
-                {number}
-              </button>
-            ))}
+            {Array.from({ length: totalPages }, (_, index) => index + 1).map(
+              (number) => (
+                <button
+                  type="button"
+                  key={number}
+                  className={safePage === number ? "active" : ""}
+                  aria-label={`Page ${number}`}
+                  aria-current={safePage === number ? "page" : undefined}
+                  onClick={() => setPage(number)}
+                >
+                  {number}
+                </button>
+              ),
+            )}
 
             <button
               type="button"
               aria-label="Next page"
               disabled={safePage === totalPages}
-              onClick={() => setPage((current) => Math.min(totalPages, current + 1))}
+              onClick={() =>
+                setPage((current) => Math.min(totalPages, current + 1))
+              }
             >
               <ChevronRight size={16} />
             </button>
