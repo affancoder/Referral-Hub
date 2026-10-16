@@ -1,7 +1,7 @@
 
 /* =========================================
    1. GLOBAL RESET
-========================================= */
+================a========================= */
 
 .login-page,
 .login-page *,
@@ -101,7 +101,7 @@
   min-width: 0;
   min-height: 590px;
 
-  padding: clamp(24px, 4vw, 48px);
+  padding: clamp(24px, 4vw, 4px);
 
   background: #ffffff;
 }
@@ -541,52 +541,6 @@
   }
 }
 
-/* =========================================
-   16. SHORT LAPTOP SCREENS
-========================================= */
-
-@media (max-height: 650px) and (min-width: 701px) {
-  .login-page {
-    align-items: flex-start;
-    padding-top: 16px;
-    padding-bottom: 16px;
-  }
-
-  .login-page .login-card {
-    min-height: 0;
-  }
-
-  .login-page .login-hero,
-  .login-page .login-left-image {
-    min-height: 0;
-  }
-
-  .login-page .login-panel {
-    min-height: 0;
-    padding-top: 22px;
-    padding-bottom: 22px;
-  }
-
-  .login-page .login-card-header {
-    margin-bottom: 17px;
-  }
-
-  .login-page .form-group {
-    margin-bottom: 12px;
-  }
-
-  .login-page .login-options {
-    margin-bottom: 15px;
-  }
-
-  .login-page .login-divider {
-    margin: 13px 0;
-  }
-
-  .login-page .admin-note {
-    margin-top: 15px;
-  }
-}
 
 /* =========================================
    17. SMALL TABLETS
@@ -644,6 +598,8 @@
 
 @media (max-width: 480px) {
   .login-page {
+    width: 100%;
+    overflow: hidden;
     align-items: flex-start;
     padding: 14px;
   }
@@ -706,6 +662,8 @@
 @media (max-width: 360px) {
   .login-page {
     padding: 10px;
+    width: 100%;
+    overflow: hidden;
   }
 
   .login-page .login-card {
