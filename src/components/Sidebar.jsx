@@ -5,6 +5,8 @@ import {
   Files,
   Gift,
   X,
+  User,
+  HelpCircle
 } from "lucide-react";
 import logo from "../assets/images/favicon.png";
 import "../CSS/Sidebar.css";
@@ -14,6 +16,8 @@ const navItems = [
   { label: "Submit Referral", path: "/submit-referral", icon: FilePlus2 },
   { label: "My Referrals", path: "/my-referrals", icon: Files },
   { label: "Rewards", path: "/rewards", icon: Gift },
+  { label: "Profile", path: "/profile", icon: User },
+  { label: "Help", path: "/help", icon: HelpCircle },
 ];
 
 export default function Sidebar({ isOpen, onClose }) {

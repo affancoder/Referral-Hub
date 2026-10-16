@@ -8,15 +8,7 @@ import SubmitReferral from "./pages/SubmitReferral";
 import MyReferrals from "./pages/MyReferrals";
 import ReferralDetails from "./pages/ReferralDetail";
 import Rewards from "./pages/Rewards";
-
-function PagePlaceholder({ title }) {
-  return (
-    <section className="page-placeholder">
-      <h1>{title}</h1>
-      <p>This page will be implemented from the Referral Hub reference.</p>
-    </section>
-  );
-}
+import Profile from "./pages/Profile";
 
 export default function App() {
   return (
@@ -36,6 +28,8 @@ export default function App() {
           <Route path="/referral-details/:id" element={<ReferralDetails />} />
 
           <Route path="/rewards" element={<Rewards />} />
+          <Route path="/profile" element={<Profile />} />
+
         </Route>
 
         {/* Redirect unknown routes to login */}
